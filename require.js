@@ -90,7 +90,7 @@
                 }
             });
             //Get all dependencies for the current file, then execute the function
-            //Due to the nature of promises this bubbles up nicely and magically handles recursion
+            //Due to the nature of promises this bubbles up nicely and magically handles recursion and nested dependencies
             return Promise.all(promises).then(function (results) {
                 //Apply allows to pass paramters as an array and have them be split up when actually running the callback to properly name them
                 return cb.apply(this, results);
